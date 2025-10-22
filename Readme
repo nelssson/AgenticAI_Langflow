@@ -24,3 +24,32 @@ Langflow: A low-code/no-code orchestration platform for building modular LLM wor
 Astra DB (Vector Database): Used to store and search vector embeddings of document chunks for efficient semantic retrieval.
 Groq (LLM Provider): Offers ultra-fast inference capabilities using high-performance large language models.
 Python: Serves as the core programming language, used for custom components, data processing, and integration scripting where needed.
+
+Architecture Flow
+
+      ┌────────────────────┐
+      │     Documents      │
+      └────────┬───────────┘
+               │ Ingest & Embed
+               ▼
+      ┌────────────────────┐
+      │  Astra Vector DB   │
+      └────────┬───────────┘
+               │ Context Retrieval
+               ▼
+      ┌────────────────────┐
+      │    Langflow App    │
+      │   (Orchestration)  │
+      └────────┬───────────┘
+               │ Build Prompt
+               ▼
+      ┌────────────────────┐
+      │     Groq LLM       │
+      └────────┬───────────┘
+               │ Create Questions
+               ▼
+      ┌────────────────────┐
+      │     Final Output    │
+      │   (Multiple Choice) │
+      └────────────────────┘
+
