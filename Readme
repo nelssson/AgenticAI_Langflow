@@ -1,1 +1,26 @@
+AgenticAI_Langflow
+This repository features practical examples that illustrate how to utilize the Langflow framework for building intelligent agent-based applications.
 
+Project: Quiz Generator
+This project showcases how to develop an AI-driven quiz creation system using the Langflow framework. It integrates contextual data from domain-specific documents stored in a vector database (Astra DB), alongside a powerful LLM (Large Language Model) served through Groq, to automatically generate multiple-choice quizzes.
+
+Objective
+The main aim of this project is to:
+Accept and process documents containing subject-specific information
+Utilize that information as background context for prompting an LLM
+Automatically generate a structured set of multiple-choice questions (MCQs)
+Demonstrate a complete AI workflow that combines external knowledge retrieval, logical reasoning, and LLM-based generation
+
+How It Works
+Document Processing: Users upload relevant documents, which are converted into vector embeddings and stored in Astra Vector DB for semantic search.
+Contextual Retrieval: When a user inputs a query or topic, the system searches the vector DB to find the most relevant document fragments.
+Prompt Construction: These relevant chunks are combined with the user’s request to create a comprehensive prompt for the LLM.
+LLM Interaction: The prompt is passed to a Groq-hosted LLM, which processes it and returns a well-structured quiz containing MCQs.
+Quiz Output: The generated questions are formatted and presented in a readable format, ready for use in educational or assessment settings.
+
+Technology Stack
+
+Langflow: A low-code/no-code orchestration platform for building modular LLM workflows using visual programming.
+Astra DB (Vector Database): Used to store and search vector embeddings of document chunks for efficient semantic retrieval.
+Groq (LLM Provider): Offers ultra-fast inference capabilities using high-performance large language models.
+Python: Serves as the core programming language, used for custom components, data processing, and integration scripting where needed.
